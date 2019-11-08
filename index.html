@@ -28,7 +28,7 @@
 
         // Base layers
         //  .. OpenStreetMap
-        var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'});
+        var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'});
 
         //  .. Grey background
         var grey = L.tileLayer("GreyTile.png");
@@ -69,7 +69,7 @@
 			minZoom: 13,
 			maxNativeZoom: 17
 		});
-	    var lyr6 = L.tileLayer('../Tiles_2M_Low_Water/{z}/{x}/{y}.png', {
+	    var lyr6 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-2M/{z}/{x}/{y}.png', {
 			tms: true, 
 			opacity: 1.0, 
 			attribution: "",
