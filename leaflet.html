@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+            <title>Surf Zone 2m</title>
+
+            <!-- Leaflet -->
+            <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+            <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+
+            <style>
+                body { margin:0; padding:0; }
+                #map { 
+					position: absolute; 
+					top:0; 
+					bottom: 0;
+					width: 100%; } /* full size */
+            </style>
+
+        </head>
+        <body>
+
+        <div id="map"></div>
+
+        <script>
+        /* **** Leaflet **** */
+
+        // Base layers
+        //  .. OpenStreetMap
+        var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'});
+
+        //  .. Grey background
+        var grey = L.tileLayer("GreyTile.png");
+
+        // Overlay layers (TMS)
+        var lyr1 = L.tileLayer('./{z}/{x}/{y}.png', {
+			tms: true, 
+			opacity: 1.0, 
+			attribution: "",
+			minZoom: 11,
+			maxNativeZoom: 15
+		});
+		
+        var lyr2 = L.tileLayer('https://geoffrowland.github.io/EU-DEM/{z}/{x}/{y}.png', {
+			tms: true, 
+			opacity: 1.0, 
+			attribution: "",
+			maxNativeZoom: 12
+		});
+		var lyr3 = L.tileLayer('../Tiles_1M_Low_Water_10M/{z}/{x}/{y}.png', {
+			tms: true, 
+			opacity: 1.0, 
+			attribution: "",
+			minZoom: 12,
+			maxNativeZoom: 16
+		});
+		var lyr4 = L.tileLayer('../Tiles_50CM_Low_Water/{z}/{x}/{y}.png', {
+			tms: true, 
+			opacity: 1.0, 
+			attribution: "",
+			minZoom: 13,
+			maxNativeZoom: 17
+		});
+	    var lyr5 = L.tileLayer('../Tiles_50CM_Zealous_Low_Water/{z}/{x}/{y}.png', {
+			tms: true, 
+			opacity: 1.0, 
+			attribution: "",
+			minZoom: 13,
+			maxNativeZoom: 17
+		});
+	    var lyr6 = L.tileLayer('../Tiles_2M_Low_Water/{z}/{x}/{y}.png', {
+			tms: true, 
+			opacity: 1.0, 
+			attribution: "",
+			minZoom: 11,
+			maxNativeZoom: 15
+		});
+	    var lyr7 = L.tileLayer('../HarryFix_2M/{z}/{x}/{y}.png', {
+			tms: true, 
+			opacity: 1.0, 
+			attribution: "",
+			minZoom: 11,
+			maxNativeZoom: 15
+		});
+	    var lyr8 = L.tileLayer('../Tiles_Nat_1M/{z}/{x}/{y}.png', {
+			tms: true, 
+			opacity: 1.0, 
+			attribution: "",
+			minZoom: 12,
+			maxNativeZoom: 16
+		});
+        // Map
+        var map = L.map('map', {
+            center: [50.59187188792176, -2.921717353306401],
+            zoom: 15,
+            minZoom: 4,
+            maxZoom: 18,
+            layers: [osm]
+        });
+
+        var basemaps = {"OpenStreetMap": osm, "Grey background": grey}
+        var overlaymaps = {"25m Zoom": lyr2, "Surf": lyr1, "2m": lyr6, "Harry": lyr7, "1m": lyr3, "1m Nat": lyr8, "50cm": lyr4, "50cm Zealous": lyr5}
+
+        // Add base layers
+        L.control.layers(basemaps, overlaymaps, {collapsed: false}).addTo(map);
+
+        // Fit to overlay bounds (SW and NE points with (lat, lon))
+        map.fitBounds([[50.429502607241915, -2.282989219854519], [50.75424116860161, -3.560445486758283]]);
+
+        </script>
+
+        </body>
+        </html>
+
+        
