@@ -34,68 +34,68 @@
 
         // Base layers
         //  .. OpenStreetMap
-        var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'});
-
+        var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+	});
         //  .. Grey background
         var grey = L.tileLayer("GreyTile.png");
 
         // Overlay layers (TMS)
         var lyr1 = L.tileLayer('./{z}/{x}/{y}.png', {
-			tms: true, 
-			opacity: 1.0, 
-			attribution: "",
-			minZoom: 11,
-			maxNativeZoom: 15
-		});
-		
+		tms: true, 
+		opacity: 1.0, 
+		attribution: "&copy; Environment Agency copyright and/or database right 2019 All rights reserved",
+		minZoom: 11,
+		maxNativeZoom: 15
+	});
         var lyr2 = L.tileLayer('https://geoffrowland.github.io/EU-DEM/{z}/{x}/{y}.png', {
-			tms: true, 
-			opacity: 1.0, 
-			attribution: "",
-			maxNativeZoom: 12
-		});
-		var lyr3 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-1M-Dorset/{z}/{x}/{y}.png', {
-			tms: true, 
-			opacity: 1.0, 
-			attribution: "",
-			minZoom: 12,
-			maxNativeZoom: 16
-		});
-		var lyr4 = L.tileLayer('../Tiles_50CM_Low_Water/{z}/{x}/{y}.png', {
-			tms: true, 
-			opacity: 1.0, 
-			attribution: "",
-			minZoom: 13,
-			maxNativeZoom: 17
-		});
-	    var lyr5 = L.tileLayer('../Tiles_50CM_Zealous_Low_Water/{z}/{x}/{y}.png', {
-			tms: true, 
-			opacity: 1.0, 
-			attribution: "",
-			minZoom: 13,
-			maxNativeZoom: 17
-		});
-	    var lyr6 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-2M/{z}/{x}/{y}.png', {
-			tms: true, 
-			opacity: 1.0, 
-			attribution: "",
-			minZoom: 11,
-			maxNativeZoom: 15
-		});
-	    var lyr7 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-2M-Old-Harry/{z}/{x}/{y}.png', {
-			tms: true, 
-			opacity: 1.0, 
-			attribution: "",
-			minZoom: 11,
-			maxNativeZoom: 15
-		});
-	    var lyr8 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-1M-National/{z}/{x}/{y}.png', {
-			tms: true, 
-			opacity: 1.0, 
-			attribution: "",
-			minZoom: 12,
-			maxNativeZoom: 16
-		});
+		tms: true, 
+		opacity: 1.0, 
+		attribution: "EU-DEM &copy; European Environment Agency (EEA) under the framework of the Copernicus programme",
+		maxNativeZoom: 12
+	});
+	var lyr3 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-1M-Dorset/{z}/{x}/{y}.png', {
+		tms: true, 
+		opacity: 1.0, 
+		attribution: "&copy; Environment Agency copyright and/or database right 2019 All rights reserved",
+		minZoom: 12,
+		maxNativeZoom: 16
+	});
+	//var lyr4 = L.tileLayer('../Tiles_50CM_Low_Water/{z}/{x}/{y}.png', {
+	//	tms: true, 
+	//	opacity: 1.0, 
+	//	attribution: "&copy; Environment Agency copyright and/or database right 2019 All rights reserved",
+	//	minZoom: 13,
+	//	maxNativeZoom: 17
+	//});
+	//var lyr5 = L.tileLayer('../Tiles_50CM_Zealous_Low_Water/{z}/{x}/{y}.png', {
+	//	tms: true, 
+	//	opacity: 1.0, 
+	//	attribution: "&copy; Environment Agency copyright and/or database right 2019 All rights reserved",
+	//	minZoom: 13,
+	//	maxNativeZoom: 17
+	//});
+	var lyr6 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-2M/{z}/{x}/{y}.png', {
+		tms: true, 
+		opacity: 1.0, 
+		attribution: "&copy; Environment Agency copyright and/or database right 2019 All rights reserved",
+		minZoom: 11,
+		maxNativeZoom: 15
+	});
+	var lyr7 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-2M-Old-Harry/{z}/{x}/{y}.png', {
+		tms: true, 
+		opacity: 1.0, 
+		attribution: "&copy; Environment Agency copyright and/or database right 2019 All rights reserved",
+		minZoom: 11,
+		maxNativeZoom: 15
+	});
+	var lyr8 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-1M-National/{z}/{x}/{y}.png', {
+		tms: true, 
+		opacity: 1.0, 
+		attribution: "&copy; Environment Agency copyright and/or database right 2019 All rights reserved",
+		minZoom: 12,
+		maxNativeZoom: 16
+	});
         // Map
         var map = L.map('map', {
 	    fullscreenControl: true,
@@ -107,7 +107,7 @@
         });
 
         var basemaps = {"OpenStreetMap": osm, "Grey background": grey}
-        var overlaymaps = {"25m Zoom": lyr2, "Surf": lyr1, "2m": lyr6, "Harry": lyr7, "1m": lyr3, "1m Nat": lyr8, "50cm": lyr4, "50cm Zealous": lyr5}
+        var overlaymaps = {"25m Zoom": lyr2, "Surf": lyr1, "2m": lyr6, "Harry": lyr7, "1m": lyr3, "1m Nat": lyr8}
 
         // Add base layers
         L.control.layers(basemaps, overlaymaps, {collapsed: false}).addTo(map);
