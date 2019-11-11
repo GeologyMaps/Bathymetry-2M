@@ -82,13 +82,6 @@
 		minZoom: 11,
 		maxNativeZoom: 15
 	});
-	var lyr7 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-2M-Old-Harry/{z}/{x}/{y}.png', {
-		tms: true, 
-		opacity: 1.0, 
-		attribution: "&copy; Environment Agency copyright and/or database right 2019 All rights reserved",
-		minZoom: 11,
-		maxNativeZoom: 15
-	});
 	var lyr8 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-1M-National/{z}/{x}/{y}.png', {
 		tms: true, 
 		opacity: 1.0, 
@@ -107,7 +100,7 @@
         });
 
         var basemaps = {"OpenStreetMap": osm, "Grey background": grey}
-        var overlaymaps = {"25m Zoom": lyr2, "Surf": lyr1, "2m": lyr6, "Harry": lyr7, "1m": lyr3, "1m Nat": lyr8}
+        var overlaymaps = {"25m Zoom": lyr2, "Surf": lyr1, "2m": lyr6, "1m": lyr3, "1m Nat": lyr8}
 
         // Add base layers
         L.control.layers(basemaps, overlaymaps, {collapsed: false}).addTo(map);
