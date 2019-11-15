@@ -68,13 +68,13 @@
 		minZoom: 13,
 		maxNativeZoom: 17
 	});
-	//var lyr5 = L.tileLayer('../Tiles_50CM_Zealous_Low_Water/{z}/{x}/{y}.png', {
-	//	tms: true, 
-	//	opacity: 1.0, 
-	//	attribution: "&copy; Environment Agency copyright and/or database right 2019 All rights reserved",
-	//	minZoom: 13,
-	//	maxNativeZoom: 17
-	//});
+	var lyr5 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-50CM-Dorset-West/{z}/{x}/{y}.png', {
+		tms: true, 
+		opacity: 1.0, 
+		attribution: "&copy; Environment Agency copyright and/or database right 2019 All rights reserved",
+		minZoom: 13,
+		maxNativeZoom: 17
+	});
 	var lyr6 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-2M/{z}/{x}/{y}.png', {
 		tms: true, 
 		opacity: 1.0, 
@@ -100,7 +100,7 @@
         });
 
         var basemaps = {"OpenStreetMap": osm, "Grey background": grey}
-        var overlaymaps = {"25m Zoom": lyr2, "Surf": lyr1, "2m": lyr6, "1m": lyr3, "1m Nat": lyr8, "50cm East": lyr4}
+        var overlaymaps = {"25m Zoom": lyr2, "Surf": lyr1, "2m": lyr6, "1m": lyr3, "1m Nat": lyr8, "50cm East": lyr4, "50cm West": lyr5}
 
         // Add base layers
         L.control.layers(basemaps, overlaymaps, {collapsed: false}).addTo(map);
