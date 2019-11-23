@@ -45,7 +45,7 @@
 		tms: true, 
 		opacity: 1.0, 
 		attribution: "&copy; Environment Agency copyright and/or database right 2019 All rights reserved",
-		minZoom: 11,
+		minZoom: 9,
 		maxNativeZoom: 15
 	});
         var lyr2 = L.tileLayer('https://geoffrowland.github.io/EU-DEM/{z}/{x}/{y}.png', {
@@ -58,36 +58,44 @@
 		tms: true, 
 		opacity: 1.0, 
 		attribution: "&copy; Environment Agency copyright and/or database right 2019 All rights reserved",
-		minZoom: 12,
+		minZoom: 10,
 		maxNativeZoom: 16
 	});
 	var lyr4 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-50CM-Dorset-East/{z}/{x}/{y}.png', {
 		tms: true, 
 		opacity: 1.0, 
 		attribution: "&copy; Environment Agency copyright and/or database right 2019 All rights reserved",
-		minZoom: 13,
+		minZoom: 12,
 		maxNativeZoom: 17
 	});
 	var lyr5 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-50CM-Dorset-West/{z}/{x}/{y}.png', {
 		tms: true, 
 		opacity: 1.0, 
 		attribution: "&copy; Environment Agency copyright and/or database right 2019 All rights reserved",
-		minZoom: 13,
+		minZoom: 12,
 		maxNativeZoom: 17
 	});
 	var lyr6 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-2M/{z}/{x}/{y}.png', {
 		tms: true, 
 		opacity: 1.0, 
 		attribution: "&copy; Environment Agency copyright and/or database right 2019 All rights reserved",
-		minZoom: 11,
+		minZoom: 9,
 		maxNativeZoom: 15
 	});
 	var lyr8 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-1M-National/{z}/{x}/{y}.png', {
 		tms: true, 
 		opacity: 1.0, 
 		attribution: "&copy; Environment Agency copyright and/or database right 2019 All rights reserved",
-		minZoom: 12,
+		minZoom: 10,
 		maxNativeZoom: 16
+	});
+	var lyr9 = L.tileLayer('https://geoffrowland.github.io/LIDAR-DTM-1M-Somerset/{z}/{x}/{y}.png', {
+		tms: true, 
+		opacity: 1.0, 
+		attribution: "&copy; Environment Agency copyright and/or database right 2019 All rights reserved",
+		minZoom: 10,
+		maxNativeZoom: 16
+
 	});
         // Map
         var map = L.map('map', {
@@ -100,7 +108,7 @@
         });
 
         var basemaps = {"OpenStreetMap": osm, "Grey background": grey}
-        var overlaymaps = {"25m Zoom": lyr2, "Surf": lyr1, "2m": lyr6, "1m": lyr3, "1m Nat": lyr8, "50cm East": lyr4, "50cm West": lyr5}
+        var overlaymaps = {"25m Zoom": lyr2, "Surf": lyr1, "2m": lyr6, "1m Dorset": lyr3, "1m Somerset": lyr9, "1m Nat": lyr8, "50cm East": lyr4, "50cm West": lyr5}
 
         // Add base layers
         L.control.layers(basemaps, overlaymaps, {collapsed: false}).addTo(map);
