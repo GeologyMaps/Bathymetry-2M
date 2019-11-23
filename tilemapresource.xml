@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
     <TileMap version="1.0.0" tilemapservice="http://tms.osgeo.org/1.0.0">
-      <Title>SomersetCoastHillRendered.tif</Title>
+      <Title>SteepHolm_Surf_Hill_Rend.tif</Title>
       <Abstract></Abstract>
       <SRS>EPSG:3857</SRS>
-      <BoundingBox minx="-4.30635370176264" miny="51.00207635020696" maxx="-2.57168372150614" maxy="51.51749507711664"/>
-      <Origin x="-4.30635370176264" y="51.00207635020696"/>
+      <BoundingBox minx="-3.15084988077893" miny="51.33344363675459" maxx="-3.07797933342025" maxy="51.37907524960682"/>
+      <Origin x="-3.15084988077893" y="51.33344363675459"/>
       <TileFormat width="256" height="256" mime-type="image/png" extension="png"/>
       <TileSets profile="mercator">
         <TileSet href="8" units-per-pixel="611.49622617187504" order="8"/>
